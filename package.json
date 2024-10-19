@@ -110,33 +110,57 @@
   "imports": {
     "#util/as-uint8array": {
       "types": "./dist/src/util/as-uint8array.d.ts",
-      "node": "./dist/src/util/as-uint8array.node.js",
-      "import": "./dist/src/util/as-uint8array.js"
+      "node": {
+        "import": "./dist/src/util/as-uint8array.node.js",
+        "require": "./dist/cjs/src/util/as-uint8array.node.js"
+      },
+      "import": "./dist/src/util/as-uint8array.js",
+      "require": "./dist/cjs/src/util/as-uint8array.js"
     },
     "#alloc": {
       "types": "./dist/src/alloc.d.ts",
-      "node": "./dist/src/alloc.node.js",
-      "import": "./dist/src/alloc.js"
+      "node": {
+        "import": "./dist/src/alloc.node.js",
+        "require": "./dist/cjs/src/alloc.node.js"
+      },
+      "import": "./dist/src/alloc.js",
+      "require": "./dist/cjs/src/alloc.js"
     },
     "#compare": {
       "types": "./dist/src/compare.d.ts",
-      "node": "./dist/src/compare.node.js",
-      "import": "./dist/src/compare.js"
+      "node": {
+        "import": "./dist/src/compare.node.js",
+        "require": "./dist/cjs/src/compare.node.js"
+      },
+      "import": "./dist/src/compare.js",
+      "require": "./dist/cjs/src/compare.js"
     },
     "#concat": {
       "types": "./dist/src/concat.d.ts",
-      "node": "./dist/src/concat.node.js",
-      "import": "./dist/src/concat.js"
+      "node": {
+        "import": "./dist/src/concat.node.js",
+        "require": "./dist/cjs/src/concat.node.js"
+      },
+      "import": "./dist/src/concat.js",
+      "require": "./dist/cjs/src/concat.js"
     },
     "#from-string": {
       "types": "./dist/src/from-string.d.ts",
-      "node": "./dist/src/from-string.node.js",
-      "import": "./dist/src/from-string.js"
+      "node": {
+        "import": "./dist/src/from-string.node.js",
+        "require": "./dist/cjs/src/from-string.node.js"
+      },
+      "import": "./dist/src/from-string.js",
+      "require": "./dist/cjs/src/from-string.js"
     },
     "#to-string": {
       "types": "./dist/src/to-string.d.ts",
-      "node": "./dist/src/to-string.node.js",
-      "import": "./dist/src/to-string.js"
+      "node": {
+        "import": "./dist/src/to-string.node.js",
+        "require": "./dist/cjs/src/to-string.node.js"
+      },
+      "import": "./dist/src/to-string.js",
+      "require": "./dist/cjs/src/to-string.js"
     }
   },
   "eslintConfig": {
