@@ -266,7 +266,7 @@
     "lint": "aegir lint",
     "release": "aegir release",
     "build": "aegir build && npm run build:cjs",
-    "build:cjs": "tsc --project tsconfig.json --module commonjs --verbatimModuleSyntax false --moduleResolution node10 --outDir ./dist/cjs --declaration --declarationDir ./dist/cjs && echo >./dist/cjs/package.json '{\"type\":\"commonjs\"}'",
+    "build:cjs": "tsc --project tsconfig.cjs.json --verbatimModuleSyntax false && resolve-tspaths -p tsconfig.cjs.json && echo >./dist/cjs/package.json '{\"type\":\"commonjs\"}'",
     "dep-check": "aegir dep-check",
     "docs": "aegir docs"
   },
@@ -276,7 +276,9 @@
   "devDependencies": {
     "@types/benchmark": "^2.1.1",
     "aegir": "^42.2.3",
-    "benchmark": "^2.1.4"
+    "benchmark": "^2.1.4",
+    "typescript": "^5.6.3",
+    "resolve-tspaths": "^0.8.22"
   },
   "react-native": {
     "#util/as-uint8array": "./dist/src/util/as-uint8array.js",
