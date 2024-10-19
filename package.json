@@ -233,6 +233,7 @@
   },
   "scripts": {
     "clean": "aegir clean",
+    "prepare": "npm run build",
     "test": "aegir test",
     "test:node": "aegir test -t node --cov",
     "test:chrome": "aegir test -t browser --cov",
