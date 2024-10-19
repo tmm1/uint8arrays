@@ -43,44 +43,68 @@
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
-      "import": "./dist/src/index.js"
+      "import": "./dist/src/index.js",
+      "require": "./dist/cjs/src/index.js"
     },
     "./alloc": {
       "types": "./dist/src/alloc.d.ts",
-      "node": "./dist/src/alloc.node.js",
-      "import": "./dist/src/alloc.js"
+      "node": {
+        "import": "./dist/src/alloc.node.js",
+        "require": "./dist/cjs/src/alloc.node.js"
+      },
+      "import": "./dist/src/alloc.js",
+      "require": "./dist/cjs/src/alloc.js"
     },
     "./compare": {
       "types": "./dist/src/compare.d.ts",
-      "node": "./dist/src/compare.node.js",
-      "import": "./dist/src/compare.js"
+      "node": {
+        "import": "./dist/src/compare.node.js",
+        "require": "./dist/cjs/src/compare.node.js"
+      },
+      "import": "./dist/src/compare.js",
+      "require": "./dist/cjs/src/compare.js"
     },
     "./concat": {
       "types": "./dist/src/concat.d.ts",
-      "node": "./dist/src/concat.node.js",
-      "import": "./dist/src/concat.js"
+      "node": {
+        "import": "./dist/src/concat.node.js",
+        "require": "./dist/cjs/src/concat.node.js"
+      },
+      "import": "./dist/src/concat.js",
+      "require": "./dist/cjs/src/concat.js"
     },
     "./equals": {
       "types": "./dist/src/equals.d.ts",
-      "import": "./dist/src/equals.js"
+      "import": "./dist/src/equals.js",
+      "require": "./dist/cjs/src/equals.js"
     },
     "./from-string": {
       "types": "./dist/src/from-string.d.ts",
-      "node": "./dist/src/from-string.node.js",
-      "import": "./dist/src/from-string.js"
+      "node": {
+        "import": "./dist/src/from-string.node.js",
+        "require": "./dist/cjs/src/from-string.node.js"
+      },
+      "import": "./dist/src/from-string.js",
+      "require": "./dist/cjs/src/from-string.js"
     },
     "./to-string": {
       "types": "./dist/src/to-string.d.ts",
-      "node": "./dist/src/to-string.node.js",
-      "import": "./dist/src/to-string.js"
+      "node": {
+        "import": "./dist/src/to-string.node.js",
+        "require": "./dist/cjs/src/to-string.node.js"
+      },
+      "import": "./dist/src/to-string.js",
+      "require": "./dist/cjs/src/to-string.js"
     },
     "./xor": {
       "types": "./dist/src/xor.d.ts",
-      "import": "./dist/src/xor.js"
+      "import": "./dist/src/xor.js",
+      "require": "./dist/cjs/src/xor.js"
     },
     "./xor-compare": {
       "types": "./dist/src/xor-compare.d.ts",
-      "import": "./dist/src/xor-compare.js"
+      "import": "./dist/src/xor-compare.js",
+      "require": "./dist/cjs/src/xor-compare.js"
     }
   },
   "imports": {
@@ -217,7 +241,8 @@
     "test:firefox-webworker": "aegir test -t webworker -- --browser firefox",
     "lint": "aegir lint",
     "release": "aegir release",
-    "build": "aegir build",
+    "build": "aegir build && npm run build:cjs",
+    "build:cjs": "tsc --project tsconfig.json --module commonjs --verbatimModuleSyntax false --moduleResolution node10 --outDir ./dist/cjs --declaration --declarationDir ./dist/cjs && echo >./dist/cjs/package.json '{\"type\":\"commonjs\"}'",
     "dep-check": "aegir dep-check",
     "docs": "aegir docs"
   },
