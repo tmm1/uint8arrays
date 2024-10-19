@@ -3,6 +3,14 @@
   "compilerOptions": {
     "module": "CommonJS",
     "outDir": "./dist/cjs",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "#util/as-uint8array": ["./src/util/as-uint8array.ts"],
+      "#alloc": ["./src/alloc.ts"],
+      "#compare": ["./src/compare.ts"],
+      "#concat": ["./src/concat.ts"],
+      "#from-string": ["./src/from-string.ts"],
+      "#to-string": ["./src/to-string.ts"]
+    }
   }
 }

@@ -266,7 +266,7 @@
     "lint": "aegir lint",
     "release": "aegir release",
     "build": "aegir build && npm run build:cjs",
-    "build:cjs": "tsc --project tsconfig.cjs.json --verbatimModuleSyntax false && resolve-tspaths -p tsconfig.cjs.json && echo >./dist/cjs/package.json '{\"type\":\"commonjs\"}'",
+    "build:cjs": "tsc --project tsconfig.cjs.json --verbatimModuleSyntax false && resolve-tspaths -p tsconfig.cjs.json -s src -o dist/cjs/src && echo >./dist/cjs/package.json '{\"type\":\"commonjs\"}'",
     "dep-check": "aegir dep-check",
     "docs": "aegir docs"
   },
